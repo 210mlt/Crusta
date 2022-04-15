@@ -24,7 +24,7 @@
 #include "../utils/fullscreennotifier.h"
 #include "../utils/timenotifier.h"
 #include "webpage.h"
-#include "../utils/crustaspeech.h"
+//#include "../utils/crustaspeech.h"
 #include "../managers/downloadwidget.h"
 
 #include <QWebEngineView>
@@ -73,7 +73,7 @@ public:
     void createPrivateWebView();
     PrivateWebView *returnPrivateView();
     QLabel *correction = new QLabel();
-    CrustaSpeech *c_speech = new CrustaSpeech();
+    //CrustaSpeech *c_speech = new CrustaSpeech();
     void home();
     void spinnerStarted();
     void faviconChanged(QIcon fav);
@@ -89,7 +89,7 @@ public:
     void authenticate(const QUrl u, QAuthenticator *authenticator);
     void showContextMenu(const QPoint &pos);
     void handleBeforePdf(qint64, qint64);
-    void espeak();
+    //void espeak();
     void search(QString text);
     void downloadLink();
     void downloadImage();

@@ -746,9 +746,9 @@ void WebView::showContextMenu(const QPoint &pos)
             connect(a_paste, &QAction::triggered, this, [this] {triggerPageAction(QWebEnginePage::Paste);});
             contextMenu->addAction(a_paste);
             contextMenu->addSeparator();
-            QAction *crusta_speak = new QAction(tr("Crusta Speak"));
-            connect(crusta_speak, &QAction::triggered, this, &WebView::espeak);
-            contextMenu->addAction(crusta_speak);
+            //QAction *crusta_speak = new QAction(tr("Crusta Speak"));
+            //connect(crusta_speak, &QAction::triggered, this, &WebView::espeak);
+            //contextMenu->addAction(crusta_speak);
             QAction *a_search = new QAction(tr("Search"));
             connect(a_search, &QAction::triggered, this, [this, text] {this->search(text);});
             contextMenu->addAction(a_search);
@@ -818,14 +818,6 @@ void WebView::loadFinished()
     out.setCodec("UTF-8");
     out << title().toUtf8() + ">>>>>" + url().toString().toUtf8() + ">>>>>" + QDate::currentDate().toString().toUtf8() + "\n";
     file.close();
-}
-
-void WebView::espeak()
-{
-    QString txt = this->selectedText();
-    c_speech->tts->setText(txt);
-    c_speech->show();
-    c_speech->speak();
 }
 
 void WebView::search(QString text)

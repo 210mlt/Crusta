@@ -48,7 +48,7 @@ set ( crusta_SRCS
 	lib/webview/privatewebview.cpp
 	lib/utils/timenotifier.cpp
 	lib/utils/themeeditor.cpp
-	lib/utils/crustaspeech.cpp
+#	lib/utils/crustaspeech.cpp
 	lib/utils/siteinfo.cpp
 	lib/utils/fullscreennotifier.cpp
 	lib/utils/permissions.cpp
@@ -81,7 +81,7 @@ set ( crusta_MOCS
 	lib/webview/privatewebview.h
 	lib/utils/timenotifier.h
 	lib/utils/themeeditor.h
-	lib/utils/crustaspeech.h
+#	lib/utils/crustaspeech.h
 	lib/utils/siteinfo.h
 	lib/utils/fullscreennotifier.h
 	lib/utils/permissions.h
@@ -102,4 +102,5 @@ QT5_WRAP_CPP(MOCS ${crusta_MOCS})
 
 add_executable ( crusta ${crusta_SRCS} ${UIS} ${RSCS} ${TRS} ${MOCS} )
 target_link_libraries ( crusta  ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_QTCHARTS_LIBRARY} ${QT_QTLOCATION_LIBRARY} ${QT_QTWEBENGINEWIDGETS_LIBRARY} ${QT_QTWEBENGINE_LIBRARY} ${QT_QTTEXTTOSPEECH_LIBRARY} ${QT_QTMULTIMEDIA_LIBRARY} )
-qt5_use_modules (crusta Widgets WebEngineWidgets WebEngine Multimedia Location Core Gui TextToSpeech)
+#qt5_use_modules (crusta Widgets WebEngineWidgets WebEngine Multimedia Location Core Gui TextToSpeech)
+qt5_use_modules (crusta Widgets WebEngineWidgets WebEngine Multimedia Location Core Gui)

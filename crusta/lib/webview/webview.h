@@ -24,7 +24,6 @@
 #include "../utils/fullscreennotifier.h"
 #include "../utils/timenotifier.h"
 #include "webpage.h"
-#include "../utils/crustaspeech.h"
 #include "../managers/downloadwidget.h"
 
 #include <QWebEngineView>
@@ -78,7 +77,7 @@ public:
     TimeNotifier *timeNotifier = new TimeNotifier();
     QWebEngineView *view = new QWebEngineView();
     QLabel *correction = new QLabel();
-    CrustaSpeech *c_speech = new CrustaSpeech();
+    //CrustaSpeech *c_speech = new CrustaSpeech();
     void createWebView();
     WebView *returnView();
     void home();
@@ -96,7 +95,7 @@ public:
     void showContextMenu(const QPoint &pos);
     void loadFinished();
     void handleBeforePdf(qint64, qint64);
-    void espeak();
+//    void espeak();
     void search(QString text);
     void downloadLink();
     void downloadImage();

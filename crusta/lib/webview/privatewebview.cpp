@@ -691,9 +691,9 @@ void PrivateWebView::showContextMenu(const QPoint &pos)
             connect(a_paste, &QAction::triggered, this, [this] {triggerPageAction(QWebEnginePage::Paste);});
             contextMenu->addAction(a_paste);
             contextMenu->addSeparator();
-            QAction *crusta_speak = new QAction(tr("Crusta Speak"));
-            connect(crusta_speak, &QAction::triggered, this, &PrivateWebView::espeak);
-            contextMenu->addAction(crusta_speak);
+            //QAction *crusta_speak = new QAction(tr("Crusta Speak"));
+            //connect(crusta_speak, &QAction::triggered, this, &PrivateWebView::espeak);
+            //contextMenu->addAction(crusta_speak);
             QAction *a_search = new QAction(tr("Search"));
             connect(a_search, &QAction::triggered, this, [this, text] {this->search(text);});
             contextMenu->addAction(a_search);
@@ -735,14 +735,6 @@ void PrivateWebView::showContextMenu(const QPoint &pos)
         contextMenu->addAction(view_page_source);
         contextMenu->exec(this->mapToGlobal(pos));
     });
-}
-
-void PrivateWebView::espeak()
-{
-    QString txt = this->selectedText();
-    c_speech->tts->setText(txt);
-    c_speech->show();
-    c_speech->speak();
 }
 
 void PrivateWebView::search(QString text)
