@@ -218,6 +218,7 @@ QWidget *TabWindow::returnTab(WebView *view)
 
 void TabWindow::loadUrl()
 {
+//fud update url search or open algorithm
     QString text = this->addr_bar->initialize()->text();
     QStringList textList = text.split(" ");
 
@@ -231,7 +232,7 @@ void TabWindow::loadUrl()
             this->view->returnView()->load(QUrl("http://" + text));
         } else if (text.startsWith("http://localhost") || text.startsWith("http://localhost:")) {
             this->view->returnView()->load(QUrl(text));
-        } else if (text.split('.').length() == 1) {
+        } else if (text.split('.').length() == 1 && text.split(':').length() == 1) { //direct load ipv6 addresses too
             QString searchStr = this->addr_bar->defaultSearch + QUrl().toPercentEncoding(text);
             this->view->returnView()->load(QUrl(searchStr));
         } else {
